@@ -218,6 +218,10 @@ button:focus-visible,
   cursor: pointer;
 }
 
+.route-actions .next-route-button {
+  grid-column: 1 / -1;
+}
+
 .primary-button {
   border: 1px solid #176b87;
   color: #fff;

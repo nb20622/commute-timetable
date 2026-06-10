@@ -2,7 +2,7 @@ import { APP_VERSION, CSV_DATE } from "./version.js";
 
 const TIME_PATTERN = /^[0-9]{2}:[0-9]{2}$/;
 const EXPECTED_TIME_FORMAT = "HH:mm または 24:xx";
-const TRANSFER_MINUTES = 4;
+const TRANSFER_MINUTES = 3;
 
 const ORIGIN_LABELS = {
   nishisanso: "西三荘",
@@ -198,6 +198,20 @@ export function buildRouteCandidates(first, second, third, origin, baseMin) {
     left.first.depMin - right.first.depMin
     || left.third.arrMin - right.third.arrMin
   ));
+}
+
+/**
+ * Start the displayed candidate list from a route explicitly chosen by ID.
+ */
+export function getVisibleRouteCandidates(routes, preferredRouteId) {
+  if (!preferredRouteId) {
+    return routes;
+  }
+
+  const preferredIndex = routes.findIndex(
+    (route) => route.id === preferredRouteId,
+  );
+  return preferredIndex >= 0 ? routes.slice(preferredIndex) : routes;
 }
 
 /**
@@ -397,6 +411,7 @@ if (typeof document !== "undefined") {
       manualTime: readStoredValue("manualTime") ?? DEFAULT_MANUAL_TIME,
       detailOpenRouteId: readStoredValue("detailOpenRouteId"),
       activeRideRoute: restoreActiveRideRoute(),
+      preferredRouteId: null,
       data: null,
       nearestDepartureMin: null,
       activeRideStatus: null,
@@ -593,7 +608,7 @@ if (typeof document !== "undefined") {
       removeStoredValue("activeRideRoute");
     }
 
-    function createNearestRouteCard(route) {
+    function createNearestRouteCard(route, nextRoute) {
       const card = createElement("article", "route-card");
       card.addEventListener("click", (event) => {
         if (
@@ -607,7 +622,9 @@ if (typeof document !== "undefined") {
       if (state.mode === "current") {
         card.append(
           createCountdown(
-            "次の成立ルートまで",
+            state.preferredRouteId
+              ? "選択中ルートの出発まで"
+              : "次の成立ルートまで",
             route.first.depMin,
             "nearest-countdown",
           ),
@@ -638,6 +655,20 @@ if (typeof document !== "undefined") {
         actions.append(useButton);
       }
       actions.append(createDetailButton(route, render));
+      if (state.mode === "current" && nextRoute) {
+        const nextRouteButton = createElement(
+          "button",
+          "secondary-button next-route-button",
+          "1本後のルートに変更",
+        );
+        nextRouteButton.type = "button";
+        nextRouteButton.addEventListener("click", () => {
+          state.preferredRouteId = nextRoute.id;
+          setDetailOpenRouteId(null);
+          render();
+        });
+        actions.append(nextRouteButton);
+      }
       card.append(actions);
       appendDetailIfOpen(card, route, state.mode === "current");
       return card;
@@ -690,11 +721,20 @@ if (typeof document !== "undefined") {
         return;
       }
 
-      const nearest = routes[0];
+      if (
+        state.preferredRouteId
+        && !routes.some((route) => route.id === state.preferredRouteId)
+      ) {
+        state.preferredRouteId = null;
+      }
+      const visibleRoutes = state.mode === "current"
+        ? getVisibleRouteCandidates(routes, state.preferredRouteId)
+        : routes;
+      const nearest = visibleRoutes[0];
       state.nearestDepartureMin = nearest.first.depMin;
-      const card = createNearestRouteCard(nearest);
+      const card = createNearestRouteCard(nearest, visibleRoutes[1]);
 
-      const nextRoutes = routes.slice(1, 4);
+      const nextRoutes = visibleRoutes.slice(1, 4);
       if (nextRoutes.length === 0) {
         routeContent.replaceChildren(card);
         return;
@@ -998,6 +1038,7 @@ if (typeof document !== "undefined") {
     for (const button of originButtons) {
       button.addEventListener("click", () => {
         state.selectedOrigin = button.dataset.origin;
+        state.preferredRouteId = null;
         writeStoredValue("selectedOrigin", state.selectedOrigin);
         render();
       });
@@ -1009,6 +1050,7 @@ if (typeof document !== "undefined") {
           return;
         }
         state.mode = input.value;
+        state.preferredRouteId = null;
         writeStoredValue("mode", state.mode);
         render();
       });

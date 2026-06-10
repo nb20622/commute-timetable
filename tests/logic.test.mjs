@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import {
   buildRouteCandidates,
   formatCountdown,
+  getVisibleRouteCandidates,
   getRideStatus,
   parseCsv,
   parseTimeToMinutes,
@@ -84,21 +85,21 @@ test("空データと不正ヘッダを検出する", () => {
   );
 });
 
-test("4分ちょうどの乗換は成立する", () => {
+test("3分ちょうどの乗換は両方とも成立する", () => {
   const routes = buildRouteCandidates(
     [train("18:42", "18:48")],
-    [train("18:52", "19:06")],
-    [train("19:10", "19:14")],
+    [train("18:51", "19:06")],
+    [train("19:09", "19:14")],
     "nishisanso",
     0,
   );
   assert.equal(routes.length, 1);
 });
 
-test("関目の乗換が3分なら候補から除外する", () => {
+test("関目の乗換が2分なら候補から除外する", () => {
   const routes = buildRouteCandidates(
     [train("18:42", "18:48")],
-    [train("18:51", "19:06")],
+    [train("18:50", "19:06")],
     standardThird,
     "nishisanso",
     0,
@@ -106,11 +107,11 @@ test("関目の乗換が3分なら候補から除外する", () => {
   assert.deepEqual(routes, []);
 });
 
-test("今里の乗換が3分なら候補から除外する", () => {
+test("今里の乗換が2分なら候補から除外する", () => {
   const routes = buildRouteCandidates(
     [train("18:42", "18:48")],
     standardSecond,
-    [train("19:09", "19:14")],
+    [train("19:08", "19:14")],
     "nishisanso",
     0,
   );
@@ -167,6 +168,28 @@ test("同一出発・同一到着の候補を1件へ統合する", () => {
     0,
   );
   assert.equal(routes.length, 1);
+});
+
+test("指定した候補から表示し、さらに1本後へ繰り返し送れる", () => {
+  const routes = [
+    { id: "route-1" },
+    { id: "route-2" },
+    { id: "route-3" },
+  ];
+
+  assert.deepEqual(
+    getVisibleRouteCandidates(routes, "route-2").map((route) => route.id),
+    ["route-2", "route-3"],
+  );
+  assert.deepEqual(
+    getVisibleRouteCandidates(routes, "route-3").map((route) => route.id),
+    ["route-3"],
+  );
+});
+
+test("指定候補が時刻経過などで消えた場合は最新の先頭へ戻る", () => {
+  const routes = [{ id: "route-2" }, { id: "route-3" }];
+  assert.equal(getVisibleRouteCandidates(routes, "route-1"), routes);
 });
 
 test("基準時刻以降に完全な経路がなければ空配列を返す", () => {
