@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>帰宅時刻表</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="app-header">
+      <p class="eyebrow">平日・帰宅ルート</p>
+      <h1>帰宅時刻表</h1>
+    </header>
+
+    <main>
+      <section class="control-panel" aria-labelledby="origin-heading">
+        <h2 id="origin-heading" class="section-label">出発駅</h2>
+        <div class="tab-list" role="tablist" aria-label="出発駅">
+          <button
+            id="origin-nishisanso"
+            class="tab-button"
+            type="button"
+            role="tab"
+            data-origin="nishisanso"
+            aria-selected="true"
+          >西三荘</button>
+          <button
+            id="origin-moriguchishi"
+            class="tab-button"
+            type="button"
+            role="tab"
+            data-origin="moriguchishi"
+            aria-selected="false"
+          >守口市</button>
+        </div>
+
+        <fieldset class="mode-fieldset">
+          <legend class="section-label">検索時刻</legend>
+          <div class="mode-options">
+            <label>
+              <input type="radio" name="mode" value="current" checked>
+              現在時刻
+            </label>
+            <label>
+              <input type="radio" name="mode" value="manual">
+              時刻指定
+            </label>
+          </div>
+          <div id="manual-time-row" class="manual-time-row" hidden>
+            <label for="manual-time">基準時刻</label>
+            <input
+              id="manual-time"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="19:30"
+              maxlength="5"
+              aria-describedby="manual-time-help"
+            >
+            <p id="manual-time-help">HH:mm または 24:xx</p>
+          </div>
+        </fieldset>
+      </section>
+
+      <section aria-live="polite" aria-atomic="true">
+        <div id="route-content" class="route-content">
+          <p class="status-message">時刻表を読み込んでいます...</p>
+        </div>
+        <div id="error-content" class="error-content" role="alert" hidden></div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>平日ダイヤ</p>
+      <p>CSV更新日：<span id="csv-date"></span></p>
+      <p>アプリ版：<span id="app-version"></span></p>
+      <button id="update-data" class="update-button" type="button">
+        データを更新
+      </button>
+      <p id="update-status" class="update-status" role="status" aria-live="polite"></p>
+    </footer>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
