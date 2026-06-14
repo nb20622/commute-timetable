@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 
 import {
+  advanceRideConnection,
   buildRouteCandidates,
   formatCountdown,
   getVisibleRouteCandidates,
@@ -221,6 +222,91 @@ test("RouteCandidateに正式駅名と所要時間を設定する", () => {
     ["守口市", "関目", "関目成育", "今里", "今里", "新深江"],
   );
   assert.equal(route.totalMinutes, 32);
+});
+
+test("secondを1本後にするとfirstを保ちsecondとthirdを繰り下げる", () => {
+  const secondTrains = [
+    train("18:54", "19:06"),
+    train("19:00", "19:12"),
+  ];
+  const thirdTrains = [
+    train("19:10", "19:14"),
+    train("19:16", "19:20"),
+    train("19:22", "19:26"),
+  ];
+  const [route] = buildRouteCandidates(
+    [train("18:42", "18:48")],
+    secondTrains,
+    thirdTrains,
+    "nishisanso",
+    0,
+  );
+
+  const advanced = advanceRideConnection(
+    { ...route, serviceDate: "2026-06-14" },
+    "second",
+    secondTrains,
+    thirdTrains,
+  );
+
+  assert.equal(advanced.first, route.first);
+  assert.equal(advanced.second.dep, "19:00");
+  assert.equal(advanced.third.dep, "19:16");
+  assert.equal(advanced.totalMinutes, 38);
+  assert.equal(advanced.id, "nishisanso-1122-1160");
+  assert.equal(advanced.serviceDate, "2026-06-14");
+});
+
+test("thirdを1本後にするとfirstとsecondを保ちthirdだけを繰り下げる", () => {
+  const secondTrains = [
+    train("18:54", "19:06"),
+    train("19:00", "19:12"),
+  ];
+  const thirdTrains = [
+    train("19:10", "19:14"),
+    train("19:16", "19:20"),
+  ];
+  const [route] = buildRouteCandidates(
+    [train("18:42", "18:48")],
+    secondTrains,
+    thirdTrains,
+    "nishisanso",
+    0,
+  );
+
+  const advanced = advanceRideConnection(
+    route,
+    "third",
+    secondTrains,
+    thirdTrains,
+  );
+
+  assert.equal(advanced.first, route.first);
+  assert.equal(advanced.second, route.second);
+  assert.equal(advanced.third.dep, "19:16");
+  assert.equal(advanced.totalMinutes, 38);
+  assert.equal(advanced.id, "nishisanso-1122-1160");
+});
+
+test("指定区間に次便が無ければnullを返す", () => {
+  const secondTrains = [train("18:54", "19:06")];
+  const thirdTrains = [train("19:10", "19:14")];
+  const [route] = buildRouteCandidates(
+    [train("18:42", "18:48")],
+    secondTrains,
+    thirdTrains,
+    "nishisanso",
+    0,
+  );
+
+  assert.equal(
+    advanceRideConnection(route, "second", secondTrains, thirdTrains),
+    null,
+  );
+  assert.equal(
+    advanceRideConnection(route, "third", secondTrains, thirdTrains),
+    null,
+  );
 });
 
 test("乗車中状態を各発車境界で切り替える", () => {

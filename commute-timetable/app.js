@@ -201,6 +201,56 @@ export function buildRouteCandidates(first, second, third, origin, baseMin) {
 }
 
 /**
+ * Move only the missed connection and subsequent legs to later trains.
+ */
+export function advanceRideConnection(route, leg, secondTrains, thirdTrains) {
+  if (leg === "second") {
+    const nextSecond = findEarliestTrain(
+      secondTrains,
+      route.second.depMin + 1,
+    );
+    if (!nextSecond) {
+      return null;
+    }
+
+    const nextThird = findEarliestTrain(
+      thirdTrains,
+      nextSecond.arrMin + TRANSFER_MINUTES,
+    );
+    if (!nextThird) {
+      return null;
+    }
+
+    return {
+      ...route,
+      id: `${route.origin}-${route.first.depMin}-${nextThird.arrMin}`,
+      second: withStations(nextSecond, "関目成育", "今里"),
+      third: withStations(nextThird, "今里", "新深江"),
+      totalMinutes: nextThird.arrMin - route.first.depMin,
+    };
+  }
+
+  if (leg === "third") {
+    const nextThird = findEarliestTrain(
+      thirdTrains,
+      route.third.depMin + 1,
+    );
+    if (!nextThird) {
+      return null;
+    }
+
+    return {
+      ...route,
+      id: `${route.origin}-${route.first.depMin}-${nextThird.arrMin}`,
+      third: withStations(nextThird, "今里", "新深江"),
+      totalMinutes: nextThird.arrMin - route.first.depMin,
+    };
+  }
+
+  return null;
+}
+
+/**
  * Start the displayed candidate list from a route explicitly chosen by ID.
  */
 export function getVisibleRouteCandidates(routes, preferredRouteId) {
@@ -411,7 +461,6 @@ if (typeof document !== "undefined") {
       manualTime: readStoredValue("manualTime") ?? DEFAULT_MANUAL_TIME,
       detailOpenRouteId: readStoredValue("detailOpenRouteId"),
       activeRideRoute: restoreActiveRideRoute(),
-      preferredRouteId: null,
       data: null,
       nearestDepartureMin: null,
       activeRideStatus: null,
@@ -590,15 +639,19 @@ if (typeof document !== "undefined") {
       }
     }
 
-    function useRoute(route) {
+    function setActiveRideRoute(route) {
       state.activeRideRoute = {
         ...route,
-        serviceDate: getClockState().serviceDate,
+        serviceDate: route.serviceDate ?? getClockState().serviceDate,
       };
       writeStoredValue(
         "activeRideRoute",
         JSON.stringify(state.activeRideRoute),
       );
+    }
+
+    function useRoute(route) {
+      setActiveRideRoute(route);
       render();
     }
 
@@ -608,7 +661,7 @@ if (typeof document !== "undefined") {
       removeStoredValue("activeRideRoute");
     }
 
-    function createNearestRouteCard(route, nextRoute) {
+    function createNearestRouteCard(route) {
       const card = createElement("article", "route-card");
       card.addEventListener("click", (event) => {
         if (
@@ -622,9 +675,7 @@ if (typeof document !== "undefined") {
       if (state.mode === "current") {
         card.append(
           createCountdown(
-            state.preferredRouteId
-              ? "選択中ルートの出発まで"
-              : "次の成立ルートまで",
+            "次の成立ルートまで",
             route.first.depMin,
             "nearest-countdown",
           ),
@@ -655,20 +706,6 @@ if (typeof document !== "undefined") {
         actions.append(useButton);
       }
       actions.append(createDetailButton(route, render));
-      if (state.mode === "current" && nextRoute) {
-        const nextRouteButton = createElement(
-          "button",
-          "secondary-button next-route-button",
-          "1本後のルートに変更",
-        );
-        nextRouteButton.type = "button";
-        nextRouteButton.addEventListener("click", () => {
-          state.preferredRouteId = nextRoute.id;
-          setDetailOpenRouteId(null);
-          render();
-        });
-        actions.append(nextRouteButton);
-      }
       card.append(actions);
       appendDetailIfOpen(card, route, state.mode === "current");
       return card;
@@ -721,20 +758,11 @@ if (typeof document !== "undefined") {
         return;
       }
 
-      if (
-        state.preferredRouteId
-        && !routes.some((route) => route.id === state.preferredRouteId)
-      ) {
-        state.preferredRouteId = null;
-      }
-      const visibleRoutes = state.mode === "current"
-        ? getVisibleRouteCandidates(routes, state.preferredRouteId)
-        : routes;
-      const nearest = visibleRoutes[0];
+      const nearest = routes[0];
       state.nearestDepartureMin = nearest.first.depMin;
-      const card = createNearestRouteCard(nearest, visibleRoutes[1]);
+      const card = createNearestRouteCard(nearest);
 
-      const nextRoutes = visibleRoutes.slice(1, 4);
+      const nextRoutes = routes.slice(1, 4);
       if (nextRoutes.length === 0) {
         routeContent.replaceChildren(card);
         return;
@@ -780,6 +808,40 @@ if (typeof document !== "undefined") {
       );
 
       const actions = createElement("div", "route-actions");
+      if (
+        state.data
+        && (
+          status.status === "to-sekime-seiiku"
+          || status.status === "to-imazato"
+        )
+      ) {
+        const leg = status.status === "to-sekime-seiiku"
+          ? "second"
+          : "third";
+        const advanceButton = createElement(
+          "button",
+          "secondary-button",
+          leg === "second"
+            ? "関目成育発を1本後に"
+            : "今里発を1本後に",
+        );
+        advanceButton.type = "button";
+        advanceButton.addEventListener("click", () => {
+          const next = advanceRideConnection(
+            route,
+            leg,
+            state.data.second.trains,
+            state.data.third.trains,
+          );
+          if (!next) {
+            window.alert("これ以上後の電車はありません");
+            return;
+          }
+          setActiveRideRoute(next);
+          renderActiveRide();
+        });
+        actions.append(advanceButton);
+      }
       const endButton = createElement(
         "button",
         "danger-button",
@@ -1038,7 +1100,6 @@ if (typeof document !== "undefined") {
     for (const button of originButtons) {
       button.addEventListener("click", () => {
         state.selectedOrigin = button.dataset.origin;
-        state.preferredRouteId = null;
         writeStoredValue("selectedOrigin", state.selectedOrigin);
         render();
       });
@@ -1050,7 +1111,6 @@ if (typeof document !== "undefined") {
           return;
         }
         state.mode = input.value;
-        state.preferredRouteId = null;
         writeStoredValue("mode", state.mode);
         render();
       });
