@@ -1,6 +1,6 @@
 // version.js is an ES module and cannot be loaded with importScripts().
 // Keep this value synchronized with APP_VERSION in version.js.
-const APP_VERSION = "2026-06-10-1";
+const APP_VERSION = "2026-06-14-1";
 const CACHE_PREFIX = "commute-timetable-";
 const CACHE_NAME = `${CACHE_PREFIX}${APP_VERSION}`;
 

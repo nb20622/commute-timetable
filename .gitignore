@@ -1,3 +1,6 @@
 .claude/
 .agents/
 .codex/
+
+# WSL/Windows が付与する代替データストリームの残骸
+*:Zone.Identifier
