@@ -1,13 +1,27 @@
 import { APP_VERSION, CSV_DATE } from "./version.js";
 
 const TIME_PATTERN = /^[0-9]{2}:[0-9]{2}$/;
-const EXPECTED_TIME_FORMAT = "HH:mm または 24:xx";
+const EXPECTED_TIME_FORMAT = "HH:mm / HHmm（:は省略可）";
 const TRANSFER_MINUTES = 3;
 
 const ORIGIN_LABELS = {
   nishisanso: "西三荘",
   moriguchishi: "守口市",
 };
+
+/**
+ * Accept mobile-friendly manual input while keeping validation in the parser.
+ */
+export function normalizeManualTime(value) {
+  const normalizedValue = typeof value === "string" ? value.trim() : "";
+  if (/^[0-9]{4}$/.test(normalizedValue)) {
+    return `${normalizedValue.slice(0, 2)}:${normalizedValue.slice(2)}`;
+  }
+  if (/^[0-9]{3}$/.test(normalizedValue)) {
+    return `0${normalizedValue.slice(0, 1)}:${normalizedValue.slice(1)}`;
+  }
+  return normalizedValue;
+}
 
 /**
  * Convert an HH:mm or 24:xx value to minutes from 00:00.
@@ -513,12 +527,13 @@ if (typeof document !== "undefined") {
 
     function getBaseMinutes() {
       if (state.mode === "manual") {
+        const manualTime = normalizeManualTime(state.manualTime);
         try {
-          return { value: parseTimeToMinutes(state.manualTime), error: null };
+          return { value: parseTimeToMinutes(manualTime), error: null };
         } catch {
           return {
             value: null,
-            error: `時刻「${state.manualTime}」が不正です。${EXPECTED_TIME_FORMAT}で入力してください。`,
+            error: `時刻「${manualTime}」が不正です。${EXPECTED_TIME_FORMAT}で入力してください。`,
           };
         }
       }
@@ -1280,6 +1295,14 @@ if (typeof document !== "undefined") {
 
     manualTimeInput.addEventListener("input", () => {
       state.manualTime = manualTimeInput.value.trim();
+      writeStoredValue("manualTime", state.manualTime);
+      render();
+    });
+
+    manualTimeInput.addEventListener("change", () => {
+      const manualTime = normalizeManualTime(manualTimeInput.value);
+      manualTimeInput.value = manualTime;
+      state.manualTime = manualTime;
       writeStoredValue("manualTime", state.manualTime);
       render();
     });

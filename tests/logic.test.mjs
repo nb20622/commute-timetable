@@ -8,6 +8,7 @@ import {
   getRideRouteCandidates,
   getVisibleRouteCandidates,
   getRideStatus,
+  normalizeManualTime,
   parseCsv,
   parseTimeToMinutes,
   serviceMinutesFromClock,
@@ -71,6 +72,31 @@ test("不正な時刻形式を拒否する", () => {
   }
 });
 
+test("手入力時刻の4桁数字をHH:mmへ正規化する", () => {
+  assert.equal(normalizeManualTime("2130"), "21:30");
+  assert.equal(normalizeManualTime(" 2130 "), "21:30");
+});
+
+test("手入力時刻の3桁数字を0H:mmへ正規化する", () => {
+  assert.equal(normalizeManualTime("930"), "09:30");
+});
+
+test("手入力時刻のHH:mm形式はtrimだけして通す", () => {
+  assert.equal(normalizeManualTime("21:30"), "21:30");
+  assert.equal(normalizeManualTime(" 24:10 "), "24:10");
+});
+
+test("手入力時刻の空文字と無効値はtrimだけして通す", () => {
+  assert.equal(normalizeManualTime(""), "");
+  assert.equal(normalizeManualTime("  "), "");
+  assert.equal(normalizeManualTime("21-30"), "21-30");
+});
+
+test("手入力時刻の数字補正後も不正時刻はパース時に拒否する", () => {
+  assert.equal(normalizeManualTime("2475"), "24:75");
+  assert.throws(() => parseTimeToMinutes(normalizeManualTime("2475")), RangeError);
+});
+
 test("始発前の端末時刻を前日サービス日の24時台として正規化する", () => {
   assert.equal(serviceMinutesFromClock(18, 42), 1122);
   assert.equal(serviceMinutesFromClock(23, 59), 1439);
@@ -106,7 +132,7 @@ test("CSVエラーをthrowせず、ファイル名・行番号・値・期待形
     assert.equal(error.fileName, "broken.csv");
     assert.equal(typeof error.lineNumber, "number");
     assert.equal(typeof error.value, "string");
-    assert.equal(error.expected, "HH:mm または 24:xx");
+    assert.equal(error.expected, "HH:mm / HHmm（:は省略可）");
   }
 });
 
