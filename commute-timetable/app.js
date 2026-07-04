@@ -201,6 +201,21 @@ export function buildRouteCandidates(first, second, third, origin, baseMin) {
 }
 
 /**
+ * Extract possible in-progress rides at nowMin, newest departure first.
+ */
+export function getRideRouteCandidates(routes, nowMin) {
+  return routes
+    .filter((route) => (
+      route.first.depMin <= nowMin
+      && nowMin <= route.third.arrMin + 5
+    ))
+    .sort((left, right) => (
+      right.first.depMin - left.first.depMin
+      || left.third.arrMin - right.third.arrMin
+    ));
+}
+
+/**
  * Move only the missed connection and subsequent legs to later trains.
  */
 export function advanceRideConnection(route, leg, secondTrains, thirdTrains) {
@@ -464,6 +479,8 @@ if (typeof document !== "undefined") {
       data: null,
       nearestDepartureMin: null,
       activeRideStatus: null,
+      rideCandidatePanelOpen: false,
+      rideCandidateRefreshMin: null,
     };
 
     document.querySelector("#csv-date").textContent = CSV_DATE;
@@ -651,6 +668,7 @@ if (typeof document !== "undefined") {
     }
 
     function useRoute(route) {
+      state.rideCandidatePanelOpen = false;
       setActiveRideRoute(route);
       render();
     }
@@ -659,6 +677,109 @@ if (typeof document !== "undefined") {
       state.activeRideRoute = null;
       state.activeRideStatus = null;
       removeStoredValue("activeRideRoute");
+    }
+
+    function createRideCandidatePanel(rideCandidates) {
+      state.rideCandidateRefreshMin = null;
+
+      const section = createElement("section", "ride-candidates");
+      section.append(createElement("h2", "", "乗車中の可能性があるルート"));
+
+      if (rideCandidates.length === 0) {
+        section.append(
+          createElement("p", "status-message", "現在進行中の候補はありません"),
+        );
+        return section;
+      }
+
+      const list = createElement("ul", "ride-candidate-list");
+      for (const route of rideCandidates) {
+        const item = createElement("li", "ride-candidate-item");
+        const status = getRideStatus(route, getClockState().serviceMinutes);
+        if (status.targetMin !== null) {
+          state.rideCandidateRefreshMin = state.rideCandidateRefreshMin === null
+            ? status.targetMin
+            : Math.min(state.rideCandidateRefreshMin, status.targetMin);
+        }
+
+        const summary = createElement("div", "ride-candidate-summary");
+        summary.tabIndex = 0;
+        summary.setAttribute("role", "button");
+        summary.setAttribute("aria-expanded", String(
+          state.detailOpenRouteId === route.id,
+        ));
+        summary.setAttribute("aria-controls", `detail-${route.id}`);
+        summary.append(
+          createElement(
+            "p",
+            "route-main",
+            `${route.first.dep} ${route.originLabel} 発 → ${route.third.arr} 新深江 着`,
+          ),
+        );
+        if (status.targetMin === null) {
+          summary.append(createElement("p", "ride-next-label", status.label));
+        } else {
+          summary.append(
+            createCountdown(
+              `次：${status.label}`,
+              status.targetMin,
+              "candidate-countdown",
+            ),
+          );
+        }
+
+        item.addEventListener("click", (event) => {
+          if (
+            event.target.closest("button")
+            || event.target.closest(".route-detail")
+          ) {
+            return;
+          }
+          toggleRouteDetail(route);
+        });
+        summary.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleRouteDetail(route);
+          }
+        });
+
+        const actions = createElement("div", "route-actions");
+        const useButton = createElement(
+          "button",
+          "primary-button",
+          "このルートを使う",
+        );
+        useButton.type = "button";
+        useButton.addEventListener("click", () => useRoute(route));
+        actions.append(useButton, createDetailButton(route, render));
+
+        item.append(summary, actions);
+        appendDetailIfOpen(item, route, true);
+        list.append(item);
+      }
+      section.append(list);
+      return section;
+    }
+
+    function createRideCandidateToggle() {
+      const button = createElement(
+        "button",
+        "ride-select-button secondary-button",
+        state.rideCandidatePanelOpen
+          ? "乗車中のルート選択を閉じる"
+          : "乗車中のルートを選ぶ",
+      );
+      button.type = "button";
+      button.setAttribute(
+        "aria-expanded",
+        String(state.rideCandidatePanelOpen),
+      );
+      button.addEventListener("click", () => {
+        state.rideCandidatePanelOpen = !state.rideCandidatePanelOpen;
+        render();
+      });
+      return button;
     }
 
     function createNearestRouteCard(route) {
@@ -748,34 +869,50 @@ if (typeof document !== "undefined") {
       return item;
     }
 
-    function renderRoutes(routes) {
+    function renderRoutes(routes, rideCandidates = []) {
       errorContent.hidden = true;
       errorContent.replaceChildren();
       routeContent.hidden = false;
+      state.rideCandidateRefreshMin = null;
+
+      const children = [];
 
       if (routes.length === 0) {
-        renderMessage("本日の運行は終了しました");
+        children.push(createElement("p", "status-message", "本日の運行は終了しました"));
+        if (state.mode === "current") {
+          children.push(createRideCandidateToggle());
+          if (state.rideCandidatePanelOpen) {
+            children.push(createRideCandidatePanel(rideCandidates));
+          }
+        }
+        routeContent.replaceChildren(...children);
         return;
       }
 
       const nearest = routes[0];
       state.nearestDepartureMin = nearest.first.depMin;
       const card = createNearestRouteCard(nearest);
+      children.push(card);
 
       const nextRoutes = routes.slice(1, 4);
-      if (nextRoutes.length === 0) {
-        routeContent.replaceChildren(card);
-        return;
+      if (nextRoutes.length > 0) {
+        const nextSection = createElement("section", "next-routes");
+        const heading = createElement("h2", "", "次の候補");
+        const list = createElement("ul", "next-route-list");
+        for (const route of nextRoutes) {
+          list.append(createNextRouteItem(route));
+        }
+        nextSection.append(heading, list);
+        children.push(nextSection);
       }
 
-      const nextSection = createElement("section", "next-routes");
-      const heading = createElement("h2", "", "次の候補");
-      const list = createElement("ul", "next-route-list");
-      for (const route of nextRoutes) {
-        list.append(createNextRouteItem(route));
+      if (state.mode === "current") {
+        children.push(createRideCandidateToggle());
+        if (state.rideCandidatePanelOpen) {
+          children.push(createRideCandidatePanel(rideCandidates));
+        }
       }
-      nextSection.append(heading, list);
-      routeContent.replaceChildren(card, nextSection);
+      routeContent.replaceChildren(...children);
     }
 
     function renderActiveRideRoute(route) {
@@ -899,6 +1036,18 @@ if (typeof document !== "undefined") {
         return;
       }
 
+      const allRoutes = state.mode === "current"
+        ? buildRouteCandidates(
+          usedSections[0].trains,
+          usedSections[1].trains,
+          usedSections[2].trains,
+          state.selectedOrigin,
+          0,
+        )
+        : [];
+      const rideCandidates = state.mode === "current"
+        ? getRideRouteCandidates(allRoutes, getClockState().serviceMinutes)
+        : [];
       const routes = buildRouteCandidates(
         usedSections[0].trains,
         usedSections[1].trains,
@@ -906,7 +1055,7 @@ if (typeof document !== "undefined") {
         state.selectedOrigin,
         baseMinutes.value,
       );
-      renderRoutes(routes);
+      renderRoutes(routes, rideCandidates);
     }
 
     function updateCountdowns() {
@@ -939,6 +1088,17 @@ if (typeof document !== "undefined") {
         && !state.activeRideRoute
         && state.nearestDepartureMin !== null
         && clock.serviceSeconds > state.nearestDepartureMin * 60
+      ) {
+        render();
+        return;
+      }
+
+      if (
+        state.mode === "current"
+        && !state.activeRideRoute
+        && state.rideCandidatePanelOpen
+        && state.rideCandidateRefreshMin !== null
+        && clock.serviceSeconds > state.rideCandidateRefreshMin * 60
       ) {
         render();
         return;
@@ -1100,6 +1260,7 @@ if (typeof document !== "undefined") {
     for (const button of originButtons) {
       button.addEventListener("click", () => {
         state.selectedOrigin = button.dataset.origin;
+        state.rideCandidatePanelOpen = false;
         writeStoredValue("selectedOrigin", state.selectedOrigin);
         render();
       });
@@ -1111,6 +1272,7 @@ if (typeof document !== "undefined") {
           return;
         }
         state.mode = input.value;
+        state.rideCandidatePanelOpen = false;
         writeStoredValue("mode", state.mode);
         render();
       });

@@ -5,6 +5,7 @@ import {
   advanceRideConnection,
   buildRouteCandidates,
   formatCountdown,
+  getRideRouteCandidates,
   getVisibleRouteCandidates,
   getRideStatus,
   parseCsv,
@@ -23,6 +24,40 @@ function train(dep, arr) {
 
 const standardSecond = [train("18:54", "19:06")];
 const standardThird = [train("19:10", "19:14")];
+
+function routeCandidate(dep, arr) {
+  return {
+    id: `route-${dep}-${arr}`,
+    origin: "moriguchishi",
+    originLabel: "守口市",
+    destinationLabel: "新深江",
+    first: {
+      from: "守口市",
+      to: "関目",
+      dep,
+      arr: "20:57",
+      depMin: parseTimeToMinutes(dep),
+      arrMin: parseTimeToMinutes("20:57"),
+    },
+    second: {
+      from: "関目成育",
+      to: "今里",
+      dep: "21:01",
+      arr: "21:10",
+      depMin: parseTimeToMinutes("21:01"),
+      arrMin: parseTimeToMinutes("21:10"),
+    },
+    third: {
+      from: "今里",
+      to: "新深江",
+      dep: "21:20",
+      arr,
+      depMin: parseTimeToMinutes("21:20"),
+      arrMin: parseTimeToMinutes(arr),
+    },
+    totalMinutes: parseTimeToMinutes(arr) - parseTimeToMinutes(dep),
+  };
+}
 
 test("時刻を0:00起点の分数へ変換する", () => {
   assert.equal(parseTimeToMinutes("18:42"), 1122);
@@ -222,6 +257,91 @@ test("RouteCandidateに正式駅名と所要時間を設定する", () => {
     ["守口市", "関目", "関目成育", "今里", "今里", "新深江"],
   );
   assert.equal(route.totalMinutes, 32);
+});
+
+test("乗車中候補は出発済みから到着後5分以内だけを抽出する", () => {
+  const beforeDeparture = routeCandidate("21:24", "21:50");
+  const inProgress = routeCandidate("20:50", "21:22");
+  const justArrivedGrace = routeCandidate("20:44", "21:15");
+  const expired = routeCandidate("20:30", "21:09");
+
+  assert.deepEqual(
+    getRideRouteCandidates(
+      [beforeDeparture, inProgress, justArrivedGrace, expired],
+      parseTimeToMinutes("21:20"),
+    ).map((route) => route.id),
+    [inProgress.id, justArrivedGrace.id],
+  );
+});
+
+test("乗車中候補は出発時刻ちょうどと到着後5分ちょうどを含む", () => {
+  const justDeparting = routeCandidate("20:50", "21:22");
+  const graceBoundary = routeCandidate("20:30", "20:45");
+
+  assert.deepEqual(
+    getRideRouteCandidates(
+      [justDeparting, graceBoundary],
+      parseTimeToMinutes("20:50"),
+    ).map((route) => route.id),
+    [justDeparting.id, graceBoundary.id],
+  );
+});
+
+test("乗車中候補は出発時刻の遅い順、同時刻なら到着の早い順にする", () => {
+  const oldest = routeCandidate("20:44", "21:16");
+  const latestSlow = routeCandidate("20:54", "21:27");
+  const latestFast = routeCandidate("20:54", "21:25");
+  const middle = routeCandidate("20:50", "21:22");
+
+  assert.deepEqual(
+    getRideRouteCandidates(
+      [oldest, latestSlow, middle, latestFast],
+      parseTimeToMinutes("21:10"),
+    ).map((route) => [route.first.dep, route.third.arr]),
+    [
+      ["20:54", "21:25"],
+      ["20:54", "21:27"],
+      ["20:50", "21:22"],
+      ["20:44", "21:16"],
+    ],
+  );
+});
+
+test("乗車中候補が存在しない場合は空配列を返す", () => {
+  assert.deepEqual(
+    getRideRouteCandidates(
+      [
+        routeCandidate("20:54", "21:27"),
+        routeCandidate("20:00", "20:30"),
+      ],
+      parseTimeToMinutes("20:40"),
+    ),
+    [],
+  );
+});
+
+test("未来ルート生成では消える発車済みルートも全日生成から乗車中候補にできる", () => {
+  const allRoutes = buildRouteCandidates(
+    [train("20:50", "20:57"), train("21:05", "21:12")],
+    [train("21:01", "21:10"), train("21:16", "21:25")],
+    [train("21:20", "21:22"), train("21:30", "21:32")],
+    "moriguchishi",
+    0,
+  );
+  const futureRoutes = buildRouteCandidates(
+    [train("20:50", "20:57"), train("21:05", "21:12")],
+    [train("21:01", "21:10"), train("21:16", "21:25")],
+    [train("21:20", "21:22"), train("21:30", "21:32")],
+    "moriguchishi",
+    parseTimeToMinutes("21:00"),
+  );
+
+  assert.deepEqual(futureRoutes.map((route) => route.first.dep), ["21:05"]);
+  assert.deepEqual(
+    getRideRouteCandidates(allRoutes, parseTimeToMinutes("21:00"))
+      .map((route) => route.first.dep),
+    ["20:50"],
+  );
 });
 
 test("secondを1本後にするとfirstを保ちsecondとthirdを繰り下げる", () => {
