@@ -22,7 +22,7 @@ Chrome DevToolsのApplication画面で登録状態とCache Storageも確認し�
 外部依存は不要です。
 
 ```sh
-node --test tests/
+node --test tests/logic.test.mjs
 node --check commute-timetable/service-worker.js
 ```
 
@@ -37,6 +37,8 @@ node --check commute-timetable/service-worker.js
 ページを再読み込みします。失敗時は旧キャッシュを残し、画面にエラーを表示します。
 
 ## ダイヤとバージョンの更新
+
+CSVの作成元・発着時刻の照合方法・作成コマンドは [時刻表/作成方法.md](時刻表/作成方法.md) を参照してください。
 
 1. 更新元の `時刻表/` に本番CSV 4ファイルを配置する。
 2. 各CSVを `commute-timetable/data/` へ内容を変えずコピーする。

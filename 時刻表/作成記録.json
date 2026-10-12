@@ -1,0 +1,1750 @@
+{
+  "checked_on": "2026-10-12",
+  "service_date": "2026-10-13",
+  "keihan": {
+    "url": "https://www.keihan.co.jp/traffic/time-fare/pdf/time01-2.pdf",
+    "title": "【平日】京阪本線・中之島線・鴨東線  出町柳→淀屋橋・中之島方面行き（下り）時刻表 （2026年8月24日変更）",
+    "pdf_sha256": "75459223576db1e4405cacd4cae97decfedfaf2bcfa5d6911098c95064927400",
+    "arrival_check_sha256": "826d1716c60ce9bf8ecb2ceebf0599d51dc5d40fdb59cfbc671406867c7394e7",
+    "arrival_check_url": "https://www.navitime.co.jp/diagram/depArrTimeList?arrival=00001360&departure=00008698&line=00000285&updown=1",
+    "arrival_check_trains": 105
+  },
+  "metro": [
+    {
+      "url": "https://kensaku.osakametro.co.jp/timetable/ja/subway/dia/station/29583/1027/1/",
+      "timetable_date": "2025年10月14日現在",
+      "sha256": "d13285ed888bb8e76a5d908507500471b950ecdf24a603e26659793f16233713",
+      "queries": [
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=5&val_mm=14&exp_type=departure&search_target=subway",
+          "sha256": "324a92888800555559d371261cd69b7ebe8c4e0e3af9b64e87da2f7aa4b35d3d",
+          "times": [
+            [
+              "05:14",
+              "05:23"
+            ],
+            [
+              "05:24",
+              "05:33"
+            ],
+            [
+              "05:34",
+              "05:43"
+            ],
+            [
+              "05:44",
+              "05:53"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=5&val_mm=54&exp_type=departure&search_target=subway",
+          "sha256": "750b047a6f331edff94f54abb71457a600b0aba04c85ab6f7dbe5298d335e8c0",
+          "times": [
+            [
+              "05:54",
+              "06:03"
+            ],
+            [
+              "06:04",
+              "06:13"
+            ],
+            [
+              "06:14",
+              "06:23"
+            ],
+            [
+              "06:24",
+              "06:33"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=6&val_mm=34&exp_type=departure&search_target=subway",
+          "sha256": "79d296d618138af48ad5a04fdd4a1becf76a46cb3f3a35e83226008128150f52",
+          "times": [
+            [
+              "06:34",
+              "06:43"
+            ],
+            [
+              "06:44",
+              "06:53"
+            ],
+            [
+              "06:53",
+              "07:02"
+            ],
+            [
+              "07:01",
+              "07:10"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=7&val_mm=9&exp_type=departure&search_target=subway",
+          "sha256": "625f9bf40426c20bf7011cfcc71c9d1dd0ca08fcd8166ecfa0c0f5b297a40b6f",
+          "times": [
+            [
+              "07:09",
+              "07:18"
+            ],
+            [
+              "07:17",
+              "07:26"
+            ],
+            [
+              "07:25",
+              "07:34"
+            ],
+            [
+              "07:31",
+              "07:41"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=7&val_mm=37&exp_type=departure&search_target=subway",
+          "sha256": "ecc56de90572195bd4e575d73cdc58a4180a75fba4ba36fc61f29dbce3ccfd93",
+          "times": [
+            [
+              "07:37",
+              "07:46"
+            ],
+            [
+              "07:42",
+              "07:51"
+            ],
+            [
+              "07:46",
+              "07:56"
+            ],
+            [
+              "07:52",
+              "08:01"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=7&val_mm=57&exp_type=departure&search_target=subway",
+          "sha256": "77037eabd2d7894793047d6587b3b9e58d89e52e86ceed309b65b07f2a6be0ed",
+          "times": [
+            [
+              "07:57",
+              "08:06"
+            ],
+            [
+              "08:01",
+              "08:10"
+            ],
+            [
+              "08:05",
+              "08:14"
+            ],
+            [
+              "08:09",
+              "08:18"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=8&val_mm=13&exp_type=departure&search_target=subway",
+          "sha256": "be78229cb86ad06331ccf417cba7c73027b83ff7453248714455455a646ec2b6",
+          "times": [
+            [
+              "08:13",
+              "08:22"
+            ],
+            [
+              "08:17",
+              "08:26"
+            ],
+            [
+              "08:21",
+              "08:30"
+            ],
+            [
+              "08:25",
+              "08:34"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=8&val_mm=30&exp_type=departure&search_target=subway",
+          "sha256": "e00c3812d20f20588922a70e80c087ef08be76e114cc43cb4ab06b4b91393609",
+          "times": [
+            [
+              "08:30",
+              "08:39"
+            ],
+            [
+              "08:35",
+              "08:44"
+            ],
+            [
+              "08:40",
+              "08:49"
+            ],
+            [
+              "08:45",
+              "08:54"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=8&val_mm=49&exp_type=departure&search_target=subway",
+          "sha256": "77a1c2b908fbec7988b3041d5b2bebfd3b88187d463227157eb930e0e667b91d",
+          "times": [
+            [
+              "08:49",
+              "08:58"
+            ],
+            [
+              "08:53",
+              "09:02"
+            ],
+            [
+              "08:57",
+              "09:06"
+            ],
+            [
+              "09:01",
+              "09:10"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=9&val_mm=5&exp_type=departure&search_target=subway",
+          "sha256": "cea6f5c8ffe71246090eb2bd9378e0ef61c4bc9245710376d2f936186f07c2e8",
+          "times": [
+            [
+              "09:05",
+              "09:14"
+            ],
+            [
+              "09:10",
+              "09:19"
+            ],
+            [
+              "09:20",
+              "09:29"
+            ],
+            [
+              "09:30",
+              "09:39"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=9&val_mm=39&exp_type=departure&search_target=subway",
+          "sha256": "969015bc654cc8f67a8723855a5507a6eaf0ff9a281a6ffa46fed89a19d16896",
+          "times": [
+            [
+              "09:39",
+              "09:48"
+            ],
+            [
+              "09:47",
+              "09:57"
+            ],
+            [
+              "09:58",
+              "10:07"
+            ],
+            [
+              "10:08",
+              "10:17"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=10&val_mm=18&exp_type=departure&search_target=subway",
+          "sha256": "4e4fa5bb88defaf8f58fb9a7db8a78c0464cf1dff82669971edc410347c2094e",
+          "times": [
+            [
+              "10:18",
+              "10:27"
+            ],
+            [
+              "10:28",
+              "10:37"
+            ],
+            [
+              "10:38",
+              "10:47"
+            ],
+            [
+              "10:48",
+              "10:57"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=10&val_mm=58&exp_type=departure&search_target=subway",
+          "sha256": "79663b4092cf8e53106755280bd94b8594f204e30cbcaa40b65f0f78e13c9984",
+          "times": [
+            [
+              "10:58",
+              "11:07"
+            ],
+            [
+              "11:08",
+              "11:17"
+            ],
+            [
+              "11:18",
+              "11:27"
+            ],
+            [
+              "11:28",
+              "11:37"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=11&val_mm=38&exp_type=departure&search_target=subway",
+          "sha256": "31b87af063a38f644ef08d3ccf2466bfc0077ef11490d39301251103756213ab",
+          "times": [
+            [
+              "11:38",
+              "11:47"
+            ],
+            [
+              "11:48",
+              "11:57"
+            ],
+            [
+              "11:58",
+              "12:07"
+            ],
+            [
+              "12:08",
+              "12:17"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=12&val_mm=18&exp_type=departure&search_target=subway",
+          "sha256": "b1497d17b61436196e462b087ed3f1749535cd1299494ab77a2288b0d7da2519",
+          "times": [
+            [
+              "12:18",
+              "12:27"
+            ],
+            [
+              "12:28",
+              "12:37"
+            ],
+            [
+              "12:38",
+              "12:47"
+            ],
+            [
+              "12:48",
+              "12:57"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=12&val_mm=58&exp_type=departure&search_target=subway",
+          "sha256": "b48e70618e6901a282bbae4f85fcdbc1f349b16d2f170cca2e1f5dc5b9452b5d",
+          "times": [
+            [
+              "12:58",
+              "13:07"
+            ],
+            [
+              "13:08",
+              "13:17"
+            ],
+            [
+              "13:18",
+              "13:27"
+            ],
+            [
+              "13:28",
+              "13:37"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=13&val_mm=38&exp_type=departure&search_target=subway",
+          "sha256": "9c5ef335a821563dc6504aa8d5a27a062b3ae9a712188572e440ce4d5a0c69e4",
+          "times": [
+            [
+              "13:38",
+              "13:47"
+            ],
+            [
+              "13:48",
+              "13:57"
+            ],
+            [
+              "13:58",
+              "14:07"
+            ],
+            [
+              "14:08",
+              "14:17"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=14&val_mm=18&exp_type=departure&search_target=subway",
+          "sha256": "f031085c7a9b6d788510d73c47b0367a8b726fcdd3fc309e8fc524e0bd2e200e",
+          "times": [
+            [
+              "14:18",
+              "14:27"
+            ],
+            [
+              "14:28",
+              "14:37"
+            ],
+            [
+              "14:38",
+              "14:47"
+            ],
+            [
+              "14:48",
+              "14:57"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=14&val_mm=58&exp_type=departure&search_target=subway",
+          "sha256": "4034f0a6d1347934c3fb8d67158898286a96b439cef158fc380c247339e9ba07",
+          "times": [
+            [
+              "14:58",
+              "15:07"
+            ],
+            [
+              "15:08",
+              "15:17"
+            ],
+            [
+              "15:18",
+              "15:27"
+            ],
+            [
+              "15:28",
+              "15:37"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=15&val_mm=38&exp_type=departure&search_target=subway",
+          "sha256": "c39ac1d8b01360b8f43d778f11d6c592d18dfafd8a941e74fe070b7afc81a60c",
+          "times": [
+            [
+              "15:38",
+              "15:47"
+            ],
+            [
+              "15:48",
+              "15:57"
+            ],
+            [
+              "15:58",
+              "16:07"
+            ],
+            [
+              "16:08",
+              "16:17"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=16&val_mm=18&exp_type=departure&search_target=subway",
+          "sha256": "9ddf96a58795d9d2f8a6961ddd1f09818e909a5b87bb63869bd489a7a0aa1c55",
+          "times": [
+            [
+              "16:18",
+              "16:27"
+            ],
+            [
+              "16:28",
+              "16:37"
+            ],
+            [
+              "16:37",
+              "16:47"
+            ],
+            [
+              "16:45",
+              "16:54"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=16&val_mm=52&exp_type=departure&search_target=subway",
+          "sha256": "f84dd9d1ff1098425742ef204bf4fc860859a018d26307d6f6d57865cde5bb87",
+          "times": [
+            [
+              "16:52",
+              "17:02"
+            ],
+            [
+              "16:59",
+              "17:08"
+            ],
+            [
+              "17:06",
+              "17:16"
+            ],
+            [
+              "17:12",
+              "17:21"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=17&val_mm=18&exp_type=departure&search_target=subway",
+          "sha256": "000e204943fac03e319e39e88130285651bb19148e5fffd53be9af33429f6f74",
+          "times": [
+            [
+              "17:18",
+              "17:27"
+            ],
+            [
+              "17:23",
+              "17:33"
+            ],
+            [
+              "17:28",
+              "17:38"
+            ],
+            [
+              "17:33",
+              "17:43"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=17&val_mm=38&exp_type=departure&search_target=subway",
+          "sha256": "121ac2c3897b90f88018a98b66401379cef44a808607be3ac64cd315fb62ba51",
+          "times": [
+            [
+              "17:38",
+              "17:48"
+            ],
+            [
+              "17:43",
+              "17:53"
+            ],
+            [
+              "17:48",
+              "17:58"
+            ],
+            [
+              "17:53",
+              "18:03"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=17&val_mm=58&exp_type=departure&search_target=subway",
+          "sha256": "ed0173719aa1d5cb7decd08341fab5a1f4bd701d74d5c052c4e6f2b8bbef3334",
+          "times": [
+            [
+              "17:58",
+              "18:08"
+            ],
+            [
+              "18:03",
+              "18:13"
+            ],
+            [
+              "18:08",
+              "18:18"
+            ],
+            [
+              "18:13",
+              "18:23"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=18&val_mm=18&exp_type=departure&search_target=subway",
+          "sha256": "0c6f3433bca667ad878076a77f7a7375b075e098f6aa0ac5a06d9f5f61d6d951",
+          "times": [
+            [
+              "18:18",
+              "18:28"
+            ],
+            [
+              "18:23",
+              "18:33"
+            ],
+            [
+              "18:28",
+              "18:38"
+            ],
+            [
+              "18:33",
+              "18:43"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=18&val_mm=38&exp_type=departure&search_target=subway",
+          "sha256": "0159fecc86c9530932127efd78571b885b30ccea4c500521cc71941eb26a8673",
+          "times": [
+            [
+              "18:38",
+              "18:48"
+            ],
+            [
+              "18:43",
+              "18:53"
+            ],
+            [
+              "18:48",
+              "18:58"
+            ],
+            [
+              "18:53",
+              "19:03"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=19&val_mm=0&exp_type=departure&search_target=subway",
+          "sha256": "e692b5acf5bef96d06e54bc76d62e0b14d4c445d6891493728be6533eb3d8a92",
+          "times": [
+            [
+              "19:00",
+              "19:10"
+            ],
+            [
+              "19:07",
+              "19:17"
+            ],
+            [
+              "19:16",
+              "19:25"
+            ],
+            [
+              "19:23",
+              "19:33"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=19&val_mm=31&exp_type=departure&search_target=subway",
+          "sha256": "aee25026d690d306778aa7b58f0c1d49fbfa4b9cfacb9bbbe4d295f79ab38f61",
+          "times": [
+            [
+              "19:31",
+              "19:40"
+            ],
+            [
+              "19:39",
+              "19:48"
+            ],
+            [
+              "19:46",
+              "19:56"
+            ],
+            [
+              "19:54",
+              "20:03"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=20&val_mm=1&exp_type=departure&search_target=subway",
+          "sha256": "2d03cde77b265275fbc7e72a6c351e79f3881d46ddba0252fe6ee8242fbb734c",
+          "times": [
+            [
+              "20:01",
+              "20:11"
+            ],
+            [
+              "20:09",
+              "20:18"
+            ],
+            [
+              "20:16",
+              "20:26"
+            ],
+            [
+              "20:24",
+              "20:33"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=20&val_mm=31&exp_type=departure&search_target=subway",
+          "sha256": "1a2083d855aa838586525ff8fd419d4e9f845fdb6a596950835cef29e35e6a66",
+          "times": [
+            [
+              "20:31",
+              "20:41"
+            ],
+            [
+              "20:39",
+              "20:48"
+            ],
+            [
+              "20:46",
+              "20:56"
+            ],
+            [
+              "20:54",
+              "21:03"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=21&val_mm=1&exp_type=departure&search_target=subway",
+          "sha256": "0ae82aec15df0d172068a2de28bf7c6c823d9a548b441da5fcb849d05f64f51a",
+          "times": [
+            [
+              "21:01",
+              "21:11"
+            ],
+            [
+              "21:09",
+              "21:18"
+            ],
+            [
+              "21:16",
+              "21:26"
+            ],
+            [
+              "21:24",
+              "21:33"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=21&val_mm=31&exp_type=departure&search_target=subway",
+          "sha256": "43f2ef860aeb3e1eb7c538fac1b322c66089332eae18f62e1e3add6ee19d19c7",
+          "times": [
+            [
+              "21:31",
+              "21:41"
+            ],
+            [
+              "21:39",
+              "21:48"
+            ],
+            [
+              "21:46",
+              "21:56"
+            ],
+            [
+              "21:55",
+              "22:04"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=22&val_mm=4&exp_type=departure&search_target=subway",
+          "sha256": "ecedd7b1ce78e41c1dca41b19e09fa9de80696db600be32fc14b3c26b9a171c4",
+          "times": [
+            [
+              "22:04",
+              "22:14"
+            ],
+            [
+              "22:14",
+              "22:23"
+            ],
+            [
+              "22:24",
+              "22:33"
+            ],
+            [
+              "22:34",
+              "22:43"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=22&val_mm=44&exp_type=departure&search_target=subway",
+          "sha256": "38159469f59a27fc157f0c45cdaa2970e9df2005d11547aba330d795280a35f4",
+          "times": [
+            [
+              "22:44",
+              "22:53"
+            ],
+            [
+              "22:54",
+              "23:03"
+            ],
+            [
+              "23:04",
+              "23:13"
+            ],
+            [
+              "23:14",
+              "23:23"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=13&val_hh=23&val_mm=24&exp_type=departure&search_target=subway",
+          "sha256": "936c9437452c9808a81bb39965b121136fa2060337dbce13e0a8bb0df60806a7",
+          "times": [
+            [
+              "23:24",
+              "23:33"
+            ],
+            [
+              "23:34",
+              "23:43"
+            ],
+            [
+              "23:44",
+              "23:53"
+            ],
+            [
+              "23:54",
+              "24:03"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E9%96%A2%E7%9B%AE%E6%88%90%E8%82%B2&val_to=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_yyyymm=202610&val_dd=14&val_hh=0&val_mm=4&exp_type=departure&search_target=subway",
+          "sha256": "5abca02fc1eac725d248463940c2331bbb50ca56eb658ed0acb0f98e6f50d3e7",
+          "times": [
+            [
+              "24:04",
+              "24:13"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://kensaku.osakametro.co.jp/timetable/ja/subway/dia/station/25840/1023/1/",
+      "timetable_date": "2025年10月14日現在",
+      "sha256": "52dcce409d9dbe0d49c888f8325cbd46cdba9a0aca978df7f96e339bf4f7f02a",
+      "queries": [
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=5&val_mm=33&exp_type=departure&search_target=subway",
+          "sha256": "cce21cbf5a75cc423b6a15d3336621b655377b794586f0754ca63e3f3311afa7",
+          "times": [
+            [
+              "05:33",
+              "05:35"
+            ],
+            [
+              "05:45",
+              "05:47"
+            ],
+            [
+              "05:56",
+              "05:58"
+            ],
+            [
+              "06:06",
+              "06:08"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=6&val_mm=16&exp_type=departure&search_target=subway",
+          "sha256": "75379f8f1a1366e0a4d039ae8cf7530a30395bbe0262442d399ac94c1c2d453c",
+          "times": [
+            [
+              "06:16",
+              "06:18"
+            ],
+            [
+              "06:26",
+              "06:28"
+            ],
+            [
+              "06:36",
+              "06:38"
+            ],
+            [
+              "06:42",
+              "06:43"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=6&val_mm=46&exp_type=departure&search_target=subway",
+          "sha256": "2cbed45e7629db49c992e2d764cc49655f9bf227ae443233d9289e00c735cf9c",
+          "times": [
+            [
+              "06:46",
+              "06:48"
+            ],
+            [
+              "06:56",
+              "06:58"
+            ],
+            [
+              "07:06",
+              "07:08"
+            ],
+            [
+              "07:11",
+              "07:13"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=7&val_mm=16&exp_type=departure&search_target=subway",
+          "sha256": "c226d408b9fb9a6d78d73ab1a904c2b80eb21c09a38f137dcac9fa9bc1952f16",
+          "times": [
+            [
+              "07:16",
+              "07:18"
+            ],
+            [
+              "07:22",
+              "07:23"
+            ],
+            [
+              "07:27",
+              "07:28"
+            ],
+            [
+              "07:31",
+              "07:33"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=7&val_mm=37&exp_type=departure&search_target=subway",
+          "sha256": "fbb1412348dd24162f7ba25c0b60ac17afc37f5ca9d3c73cae9a8bfceef119d0",
+          "times": [
+            [
+              "07:37",
+              "07:39"
+            ],
+            [
+              "07:41",
+              "07:43"
+            ],
+            [
+              "07:45",
+              "07:47"
+            ],
+            [
+              "07:50",
+              "07:51"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=7&val_mm=54&exp_type=departure&search_target=subway",
+          "sha256": "4d9f0a1d0554ea75535351fe9012a814c137cae3cff9a11626b8a2c428dacfcc",
+          "times": [
+            [
+              "07:54",
+              "07:55"
+            ],
+            [
+              "07:58",
+              "07:59"
+            ],
+            [
+              "08:02",
+              "08:04"
+            ],
+            [
+              "08:07",
+              "08:09"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=8&val_mm=12&exp_type=departure&search_target=subway",
+          "sha256": "6c84aa59f006af7be73d2e83ea446b93d7e941ffaad9edb6823904973e46e923",
+          "times": [
+            [
+              "08:12",
+              "08:14"
+            ],
+            [
+              "08:17",
+              "08:19"
+            ],
+            [
+              "08:22",
+              "08:24"
+            ],
+            [
+              "08:27",
+              "08:29"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=8&val_mm=32&exp_type=departure&search_target=subway",
+          "sha256": "c41f2ba4bc828ebdc34834b7ded851f7343ac9db70798371f66966de9448f012",
+          "times": [
+            [
+              "08:32",
+              "08:34"
+            ],
+            [
+              "08:36",
+              "08:38"
+            ],
+            [
+              "08:40",
+              "08:42"
+            ],
+            [
+              "08:45",
+              "08:46"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=8&val_mm=49&exp_type=departure&search_target=subway",
+          "sha256": "af2254c6b95d08d8498789255bc41db6f65d1e1592b7ec36b364d227336b3414",
+          "times": [
+            [
+              "08:49",
+              "08:50"
+            ],
+            [
+              "08:53",
+              "08:54"
+            ],
+            [
+              "08:57",
+              "08:59"
+            ],
+            [
+              "09:01",
+              "09:03"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=9&val_mm=6&exp_type=departure&search_target=subway",
+          "sha256": "89b04b2cc35afec146794f591f35c296fcd00a4375b38145e95030c069f0111c",
+          "times": [
+            [
+              "09:06",
+              "09:08"
+            ],
+            [
+              "09:12",
+              "09:14"
+            ],
+            [
+              "09:18",
+              "09:20"
+            ],
+            [
+              "09:25",
+              "09:26"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=9&val_mm=32&exp_type=departure&search_target=subway",
+          "sha256": "8a3b1213cd311f3a08d032db740c8812f7c218f25a1f006b558bbedaf765c730",
+          "times": [
+            [
+              "09:32",
+              "09:33"
+            ],
+            [
+              "09:37",
+              "09:39"
+            ],
+            [
+              "09:43",
+              "09:45"
+            ],
+            [
+              "09:49",
+              "09:51"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=9&val_mm=56&exp_type=departure&search_target=subway",
+          "sha256": "7b54882c5a29b872c5a60e740bde2db4453bdc205863a767dcd15d687bc5e1b9",
+          "times": [
+            [
+              "09:56",
+              "09:57"
+            ],
+            [
+              "10:03",
+              "10:05"
+            ],
+            [
+              "10:11",
+              "10:12"
+            ],
+            [
+              "10:18",
+              "10:20"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=10&val_mm=26&exp_type=departure&search_target=subway",
+          "sha256": "7b7e6518bd407f57e732757537d955bb5d264fed8fafb4a553676834cbafade8",
+          "times": [
+            [
+              "10:26",
+              "10:27"
+            ],
+            [
+              "10:33",
+              "10:35"
+            ],
+            [
+              "10:41",
+              "10:42"
+            ],
+            [
+              "10:48",
+              "10:50"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=10&val_mm=56&exp_type=departure&search_target=subway",
+          "sha256": "7a3007564e9d017cdd0cada0adf912979e631d81a03d9753631d10e896c6db95",
+          "times": [
+            [
+              "10:56",
+              "10:57"
+            ],
+            [
+              "11:03",
+              "11:05"
+            ],
+            [
+              "11:11",
+              "11:12"
+            ],
+            [
+              "11:18",
+              "11:20"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=11&val_mm=26&exp_type=departure&search_target=subway",
+          "sha256": "9ddffadd275ba75655b6d0e5c76120276e8de6999987202d45be736174d84f48",
+          "times": [
+            [
+              "11:26",
+              "11:27"
+            ],
+            [
+              "11:33",
+              "11:35"
+            ],
+            [
+              "11:41",
+              "11:42"
+            ],
+            [
+              "11:48",
+              "11:50"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=11&val_mm=56&exp_type=departure&search_target=subway",
+          "sha256": "0eb1d6e5990a9b28e1a9b2d47414995b93826675829e2581d37d323d90f57161",
+          "times": [
+            [
+              "11:56",
+              "11:57"
+            ],
+            [
+              "12:03",
+              "12:05"
+            ],
+            [
+              "12:11",
+              "12:12"
+            ],
+            [
+              "12:18",
+              "12:20"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=12&val_mm=26&exp_type=departure&search_target=subway",
+          "sha256": "6f21620cbc2477aa61190040cd338c0b4e7bc10a6bacb9118a4478b076cda07a",
+          "times": [
+            [
+              "12:26",
+              "12:27"
+            ],
+            [
+              "12:33",
+              "12:35"
+            ],
+            [
+              "12:41",
+              "12:42"
+            ],
+            [
+              "12:48",
+              "12:50"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=12&val_mm=56&exp_type=departure&search_target=subway",
+          "sha256": "790da2289e2bb6b32b1f7b845c3d5a442daacd14a35df9f05475179668a3ca0c",
+          "times": [
+            [
+              "12:56",
+              "12:57"
+            ],
+            [
+              "13:03",
+              "13:05"
+            ],
+            [
+              "13:11",
+              "13:12"
+            ],
+            [
+              "13:18",
+              "13:20"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=13&val_mm=26&exp_type=departure&search_target=subway",
+          "sha256": "d03f9729eb00f689c62a3ab72992827baac165f165fdec0b3c3f45af5821752a",
+          "times": [
+            [
+              "13:26",
+              "13:27"
+            ],
+            [
+              "13:33",
+              "13:35"
+            ],
+            [
+              "13:41",
+              "13:42"
+            ],
+            [
+              "13:48",
+              "13:50"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=13&val_mm=56&exp_type=departure&search_target=subway",
+          "sha256": "1e1fcdca1c8e49c4de4240f765846c6c30a2156cf75279e1b0427b1d2f8d346b",
+          "times": [
+            [
+              "13:56",
+              "13:57"
+            ],
+            [
+              "14:03",
+              "14:05"
+            ],
+            [
+              "14:11",
+              "14:12"
+            ],
+            [
+              "14:18",
+              "14:20"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=14&val_mm=26&exp_type=departure&search_target=subway",
+          "sha256": "88a9410b1e66a8385790ee0316248234df4831373a40e0aad74682106b12bddf",
+          "times": [
+            [
+              "14:26",
+              "14:27"
+            ],
+            [
+              "14:33",
+              "14:35"
+            ],
+            [
+              "14:41",
+              "14:42"
+            ],
+            [
+              "14:48",
+              "14:50"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=14&val_mm=56&exp_type=departure&search_target=subway",
+          "sha256": "cc586c1b0f8c5fa72448743d77525dce9ab4202013e15285702680f4b00a375b",
+          "times": [
+            [
+              "14:56",
+              "14:57"
+            ],
+            [
+              "15:03",
+              "15:05"
+            ],
+            [
+              "15:11",
+              "15:12"
+            ],
+            [
+              "15:18",
+              "15:20"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=15&val_mm=26&exp_type=departure&search_target=subway",
+          "sha256": "fd36adb949e5ba3fc34ceb1728b2acb3f28a60453c557af7ab8b10b44c7ae825",
+          "times": [
+            [
+              "15:26",
+              "15:27"
+            ],
+            [
+              "15:33",
+              "15:35"
+            ],
+            [
+              "15:41",
+              "15:42"
+            ],
+            [
+              "15:48",
+              "15:50"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=15&val_mm=56&exp_type=departure&search_target=subway",
+          "sha256": "ee1d3df9fb8e57ab581065b9c4b5ff63a646a1fb6a70ca34a49e104077d31f3b",
+          "times": [
+            [
+              "15:56",
+              "15:57"
+            ],
+            [
+              "16:03",
+              "16:05"
+            ],
+            [
+              "16:11",
+              "16:12"
+            ],
+            [
+              "16:18",
+              "16:20"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=16&val_mm=22&exp_type=departure&search_target=subway",
+          "sha256": "9d06cab81556d458d5be02c7c580bc21832b770398b9f444f74f937f0f9c0fc6",
+          "times": [
+            [
+              "16:22",
+              "16:24"
+            ],
+            [
+              "16:26",
+              "16:28"
+            ],
+            [
+              "16:34",
+              "16:35"
+            ],
+            [
+              "16:37",
+              "16:39"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=16&val_mm=41&exp_type=departure&search_target=subway",
+          "sha256": "3d6094b1b7922bca512ac3ce3032bc3b8ace925a140cd7cacc4a6abee35f8b32",
+          "times": [
+            [
+              "16:41",
+              "16:42"
+            ],
+            [
+              "16:45",
+              "16:47"
+            ],
+            [
+              "16:49",
+              "16:51"
+            ],
+            [
+              "16:54",
+              "16:56"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=16&val_mm=59&exp_type=departure&search_target=subway",
+          "sha256": "edcd4e94c24a95c474cd200976129bb6036a8149d2ab52af167af1d5e048693b",
+          "times": [
+            [
+              "16:59",
+              "17:01"
+            ],
+            [
+              "17:04",
+              "17:06"
+            ],
+            [
+              "17:09",
+              "17:11"
+            ],
+            [
+              "17:14",
+              "17:16"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=17&val_mm=19&exp_type=departure&search_target=subway",
+          "sha256": "ffae7555bf3f4e37e3341dad6162db02ec5f1e6435de02208bbf50bbde1f178c",
+          "times": [
+            [
+              "17:19",
+              "17:21"
+            ],
+            [
+              "17:24",
+              "17:26"
+            ],
+            [
+              "17:29",
+              "17:31"
+            ],
+            [
+              "17:34",
+              "17:36"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=17&val_mm=39&exp_type=departure&search_target=subway",
+          "sha256": "9f7e41b637fb22f9af9054fd5afcafcfeaf5eca3357996d80752cd8c0e245a3a",
+          "times": [
+            [
+              "17:39",
+              "17:41"
+            ],
+            [
+              "17:44",
+              "17:46"
+            ],
+            [
+              "17:49",
+              "17:51"
+            ],
+            [
+              "17:54",
+              "17:56"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=17&val_mm=59&exp_type=departure&search_target=subway",
+          "sha256": "9bf7d8bf6aa66bfb3fdeb7553716ce93f5208a732731e00441a33e7549598d61",
+          "times": [
+            [
+              "17:59",
+              "18:01"
+            ],
+            [
+              "18:04",
+              "18:06"
+            ],
+            [
+              "18:09",
+              "18:11"
+            ],
+            [
+              "18:14",
+              "18:16"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=18&val_mm=19&exp_type=departure&search_target=subway",
+          "sha256": "c3112bb86243e916c9ecd14d90a7e6bfee53c536c8fa887387d217504a1e984e",
+          "times": [
+            [
+              "18:19",
+              "18:21"
+            ],
+            [
+              "18:24",
+              "18:26"
+            ],
+            [
+              "18:29",
+              "18:31"
+            ],
+            [
+              "18:34",
+              "18:36"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=18&val_mm=39&exp_type=departure&search_target=subway",
+          "sha256": "9957ffd749e134ac62d1fb9fa10e5b65474ec803805b347833801c0e8a10f531",
+          "times": [
+            [
+              "18:39",
+              "18:41"
+            ],
+            [
+              "18:44",
+              "18:46"
+            ],
+            [
+              "18:49",
+              "18:51"
+            ],
+            [
+              "18:54",
+              "18:56"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=18&val_mm=59&exp_type=departure&search_target=subway",
+          "sha256": "dc1f24e11febddbe8ab356a06e8985553a1c24a6f2f503ae467f18149b272964",
+          "times": [
+            [
+              "18:59",
+              "19:01"
+            ],
+            [
+              "19:04",
+              "19:06"
+            ],
+            [
+              "19:09",
+              "19:11"
+            ],
+            [
+              "19:14",
+              "19:16"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=19&val_mm=19&exp_type=departure&search_target=subway",
+          "sha256": "da28c0f0a1d7d93ee83246eca316e125761d6b883d911e14151f5bcfef0f6d1a",
+          "times": [
+            [
+              "19:19",
+              "19:21"
+            ],
+            [
+              "19:25",
+              "19:26"
+            ],
+            [
+              "19:32",
+              "19:33"
+            ],
+            [
+              "19:39",
+              "19:40"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=19&val_mm=46&exp_type=departure&search_target=subway",
+          "sha256": "3bb15ebc0dd0abc364c4a063466f83c32f1be9e85f26ee83f5376672458f1b91",
+          "times": [
+            [
+              "19:46",
+              "19:47"
+            ],
+            [
+              "19:53",
+              "19:54"
+            ],
+            [
+              "19:59",
+              "20:01"
+            ],
+            [
+              "20:07",
+              "20:08"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=20&val_mm=14&exp_type=departure&search_target=subway",
+          "sha256": "542910ba7c9821569b14670febf65f408f53c5377120d32158b0f52d5b6c978c",
+          "times": [
+            [
+              "20:14",
+              "20:15"
+            ],
+            [
+              "20:21",
+              "20:22"
+            ],
+            [
+              "20:28",
+              "20:29"
+            ],
+            [
+              "20:35",
+              "20:36"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=20&val_mm=42&exp_type=departure&search_target=subway",
+          "sha256": "5f8ea0fef1ef4ea1a6176ccc4cef46990add86f91cd5835a8ceb2a96954f2566",
+          "times": [
+            [
+              "20:42",
+              "20:43"
+            ],
+            [
+              "20:49",
+              "20:50"
+            ],
+            [
+              "20:56",
+              "20:57"
+            ],
+            [
+              "21:03",
+              "21:04"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=21&val_mm=10&exp_type=departure&search_target=subway",
+          "sha256": "372b4ab5c02fca05208a07c32bd1addd3a03d7eaabf5a2dac9e08b94afc9366c",
+          "times": [
+            [
+              "21:10",
+              "21:12"
+            ],
+            [
+              "21:20",
+              "21:22"
+            ],
+            [
+              "21:30",
+              "21:32"
+            ],
+            [
+              "21:40",
+              "21:42"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=21&val_mm=50&exp_type=departure&search_target=subway",
+          "sha256": "e7948cc7e4178d95cae230ef982e912a9f62767ae2cbe17cd793b1cc38f4e234",
+          "times": [
+            [
+              "21:50",
+              "21:52"
+            ],
+            [
+              "22:00",
+              "22:02"
+            ],
+            [
+              "22:10",
+              "22:12"
+            ],
+            [
+              "22:20",
+              "22:22"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=22&val_mm=30&exp_type=departure&search_target=subway",
+          "sha256": "9c257dc0fdae926e29d8587051e0448f5fb8e18cbc64ebb3aaa151dd22dc8fb9",
+          "times": [
+            [
+              "22:30",
+              "22:32"
+            ],
+            [
+              "22:40",
+              "22:42"
+            ],
+            [
+              "22:50",
+              "22:52"
+            ],
+            [
+              "23:00",
+              "23:02"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=23&val_mm=10&exp_type=departure&search_target=subway",
+          "sha256": "a98b88cc803add8e56dbcef0d7c9e051cf10d68e9f67088ff2e206fb58a238bd",
+          "times": [
+            [
+              "23:10",
+              "23:12"
+            ],
+            [
+              "23:20",
+              "23:22"
+            ],
+            [
+              "23:30",
+              "23:32"
+            ],
+            [
+              "23:40",
+              "23:42"
+            ]
+          ]
+        },
+        {
+          "url": "https://kensaku.osakametro.co.jp/route/ja/web/dia/result?val_from=%E4%BB%8A%E9%87%8C%28%E5%9C%B0%E4%B8%8B%E9%89%84%29&val_to=%E6%96%B0%E6%B7%B1%E6%B1%9F&val_yyyymm=202610&val_dd=13&val_hh=23&val_mm=50&exp_type=departure&search_target=subway",
+          "sha256": "a2e07edb85e9eef30ed1dd89eb8144214e01a56ada1751e4711e01f288daa39a",
+          "times": [
+            [
+              "23:50",
+              "23:52"
+            ],
+            [
+              "24:00",
+              "24:02"
+            ],
+            [
+              "24:10",
+              "24:12"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
